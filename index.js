@@ -24,12 +24,12 @@ for (let key in entry) {
         console.error(err);
         return;
       }
-      res.json(fd)
+      res.json(JSON.parse(fd))
     })
   })
 }
 
 if (!module.parent) {
   app.listen(3000);
-  console.log('Express started on port 3000');
+  console.info('Express started on port 3000\nPlease Input `curl localhost:3000/api/data`');
 }
