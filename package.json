@@ -22,5 +22,8 @@
   "homepage": "https://github.com/JsonLu/mock#readme",
   "devDependencies": {
     "express": "^4.15.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.1"
   }
 }

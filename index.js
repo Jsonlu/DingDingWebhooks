@@ -1,35 +1,26 @@
 /**
  * Created by jsonlu on 17/4/24.
  */
-const express = require('express');
-const walk = require('./walk')
-const fs = require('fs')
-
-walk.read('./', 'data')
-let entry = walk.data
-
-var router = express.Router();
-var app = module.exports = express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const reqs = require('./Req')
+const router = express.Router()
+const app = module.exports = express()
+app.use(bodyParser.json({limit: '1mb'}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use("/api", router);
 router.use((req, res, next) => {
   console.log('进入中间件')
   next()
 })
 
-for (let key in entry) {
-  router.get('/' + key, (req, res, nex) => {
-    console.log('进入路由');
-    fs.readFile(entry[key], {flag: 'r+', encoding: 'utf8'}, (err, fd) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      res.json(JSON.parse(fd))
-    })
-  })
-}
+router.post('/dingding', (req, res, nex) => {
+  reqs.reqDingd(req.body)
+  res.end("yes")
+})
 
 if (!module.parent) {
-  app.listen(3000);
-  console.info('Express started on port 3000\nPlease Input `curl localhost:3000/api/data`');
+  app.listen(3000)
 }
