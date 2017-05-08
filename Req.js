@@ -3,7 +3,7 @@
  */
 
 const axios = require('axios')
-const config = require('./config')
+const config = require('./config.json')
 axios.interceptors.request.use(function (config) {
   return config;
 }, function (error) {
@@ -29,7 +29,7 @@ module.exports = {
         })
   },
   reqDingd: function (param) {
-    let key = config.data[param.project.namespace + '_' + param.project.name]
+    let key = config.data.FosunPay[0]
     if (key == "")
       return;
     let data = '项目:' + param.project.name + '\n团队:' + param.project.namespace + '\n提交:' + param.user_name + '\n分支:' +

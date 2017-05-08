@@ -1,25 +1,24 @@
 {
-  "name": "mock",
+  "name": "DingDingRobot",
   "version": "1.0.0",
-  "description": "a mock server",
+  "description": "a DingDingRobot",
   "main": "index.js",
   "scripts": {
     "dev": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JsonLu/mock.git"
+    "url": "git+https://github.com/JsonLu/DingDingRobot.git"
   },
   "keywords": [
-    "mock",
-    "tool-kit"
+    "DingDingRobot"
   ],
   "author": "JsonLu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JsonLu/mock/issues"
+    "url": "https://github.com/JsonLu/DingDingRobot/issues"
   },
-  "homepage": "https://github.com/JsonLu/mock#readme",
+  "homepage": "https://github.com/JsonLu/DingDingRobot#readme",
   "devDependencies": {
     "express": "^4.15.2"
   },
