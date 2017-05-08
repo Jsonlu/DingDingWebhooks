@@ -1,0 +1,8 @@
+{
+  "db": {
+    "host": "localhost",
+    "name": "wechat",
+    "user": "root",
+    "pwd": "root"
+  }
+}

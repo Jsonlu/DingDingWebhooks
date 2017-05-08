@@ -29,9 +29,6 @@ module.exports = {
         })
   },
   reqDingd: function (param) {
-    let key = config.data.FosunPay[0]
-    if (key == "")
-      return;
     let data = '项目:' + param.project.name + '\n团队:' + param.project.namespace + '\n提交:' + param.user_name + '\n分支:' +
         param.ref.split("refs/heads/")[1] + '\n内容:'
     let commit = param.commits
@@ -50,6 +47,11 @@ module.exports = {
       data += '\n详细:' + comm.url
     }
     let p = {msgtype: 'text', text: {content: data}}
-    this.req('send?access_token=' + key, p, '')
+    for (let index in config.data[param.project.name]) {
+      let key = config.data.FosunPay[index]
+      if (key == "")
+        return;
+      this.req('send?access_token=' + key, p, '')
+    }
   }
 }
