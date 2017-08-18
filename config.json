@@ -1,8 +1,12 @@
 {
   "data": {
-    "FosunPay": [
-      "35f245101f0bcf71badab44dbb6f4e89987ea48647c7d18c61e5475cc194bd45",
-      "ea6a073bc94f84ceacbc41f29e0dd73652221067b7676f6d8f9209c681a612b0"
-    ]
+    "group": {
+      "android-developers": [
+        ""
+      ],
+      "yujieqiong": [
+        ""
+      ]
+    }
   }
 }
